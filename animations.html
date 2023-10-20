@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        button{
-            margin: 1em 0;
-        }
-
         .square{
+            margin: 1rem 0;
             background-color: red;
             width: 250px;
             height: 250px;
         }
         .rect{
+            margin: 1rem 0;
             background-color: blue;
             width: 250px;
             height: 250px;
@@ -27,6 +25,8 @@
     <div class="square"></div>
     <button class="b2">Click</button>
     <div class="rect"></div>
+    <p id="p1">This is a paragraph</p>
+    <button class="b3">Click</button>
     <script src="jquery-3.7.1.js"></script>
     <script>
         $(document).ready(function(){
@@ -35,7 +35,10 @@
             });
             $(".b2").click(function(){
                 $(".rect").animate({width: '500px', opacity: '1'}, 2000)
-            })
+            });
+            $(".b3").click(function(){
+                $("#p1").css("color", "blue").slideUp(1500).slideDown(1500);
+            });
         });
     </script>
 </body>

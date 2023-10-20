@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <button id="b1">Click</button>
+    <br>
+    <br>
+    <input type="text" id="input--text" placeholder="Type here">
+    <button id="b2">Click</button>
+    <ul>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ul>
+    <button id="b3">Click</button>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        // const button = document.querySelector("button");
+        // const inputValue = document.querySelector("input");
+        // const list = document.querySelector("ul")
+
+        // button.addEventListener("click", () => {
+        //     let value = inputValue.value;
+        //     list.innerHTML += `<li>${value}</li>`
+        // });
+
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                $("h1").text("Novo título").css("color", "red");
+            });
+            $("#b2").click(function(){
+                $("input").val(function(i){
+                    return "Item " + i;
+                });
+            })
+            $("#b3").click(function(){
+                $("li").html(function(i){
+                    return "Item " + (i + 1);
+                });
+            });
+        });
+
+        //  $("li").text(function(i){
+        //   return "Item " + i;
+        //  });
+    </script>
+</body>
+</html>
