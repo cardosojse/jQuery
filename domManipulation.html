@@ -16,6 +16,9 @@
         <li>Item</li>
         <li>Item</li>
         <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
     </ul>
     <button id="b3">Click</button>
     <script src="jquery-3.7.1.js"></script>
@@ -34,9 +37,7 @@
                 $("h1").text("Novo título").css("color", "red");
             });
             $("#b2").click(function(){
-                $("input").val(function(i){
-                    return "Item " + i;
-                });
+                alert("Input value: " + $("input").val());
             })
             $("#b3").click(function(){
                 $("li").html(function(i){
