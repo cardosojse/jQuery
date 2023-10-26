@@ -4,88 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
 
-        *{
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-        body{
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-        }
-        .container{
-            width: 80%;
-            max-width: 750px;
-            margin: 0 auto;
-            padding: .5em 0;
-        }
-        header{
-            text-align: center;
-            padding: 2em;
-        }
-        input{
-            padding: .7em;
-            font-size: 1.2rem;
-        }
-        .new-task{
-            width: 50%;
-        }
-        ul{
-            width: 80%;
-            margin: 0 auto;
-        }
-        ul li{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin: 0.5em 0;
-            padding: 0.7em 0;
-        }
-        .item{
-            width: 80%;
-            padding: .2em;
-            border-bottom: .5px solid #000;
-        }
-        .check{
-            text-decoration: line-through;
-        }
     </style>
     <title>ToDo List with jQuery</title>
 </head>
 <body>
     <div class="container">
-        <header>
-            <input type="text" class="new-task" placeholder="Add new task">
-            <input type="submit" class="submit" value="Create">
-        </header>
-        <ul>
+        <input type="text" class="input__box" placeholder="Add a new task">
+        <div class="controls">
+            <div class="filters">
+                <span id="all">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
+            <button class="clear__btn">Clear All</button>
+        </div>
+        <ul class="task__box">
+            <li>
+                <label for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                </label>
+                <p>Create portfolio</p>
+                <div class="settings">
+                    <img width="18" height="18" src="https://img.icons8.com/ios-glyphs/30/ellipsis.png" alt="ellipsis"/>
+                </div>
+            </li>
         </ul>
     </div>
     <script src="jquery-3.7.1.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".submit").click(function(){
-                var input = $(".new-task").val();
-                if (input == ''){
-                    alert("Empty field!");
-                }else{
-                    $("ul").append("<li>" 
-                        + "<img class='check' width='25' height='25' src='https://img.icons8.com/material-outlined/24/checkmark.png'/>"
-                        + "<p class='item'>" + input + "</p>"
-                        + "<img class='remove' width='25' height='25' src='https://img.icons8.com/color/48/delete-sign--v1.png'/>"
-                        + "</li>");
-                }
-                $(".new-task").val('');
-            });''    
-            $("ul").on("click", ".check", function(){
-                $(this).parent("li").toggleClass("check");
-            });
-            $("ul").on("click", ".remove", function(){
-                $(this).parent("li").fadeOut(200);
-            });
-        });
-    </script>
 </body>
 </html>

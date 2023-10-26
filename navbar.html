@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing:border-box; margin:0; padding:0;}
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        nav{
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#">Home</a>
+        <a href="#">Pokemons</a>
+    </header>
+    <nav>
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+    </nav>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("a").mouseenter(function(){
+                $("nav").slideDown()
+            });
+        });
+    </script>
+</body>
+</html>
